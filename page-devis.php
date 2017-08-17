@@ -45,7 +45,7 @@ get_header(); ?>
                         </li>
                     </ul>
                 </header>
-                <form class="tab-content" id="devis-form" action="/" method="post" novalidate>
+                <form class="tab-content" id="devis-form" action="<?php echo get_template_directory_uri(); ?>/controller/devisFormValidate.php" method="post" novalidate>
                     <div class="tab-pane active" id="1a">
                         <h4>Quelle est votre situation actuelle ?</h4>
                         <div class="box between">
@@ -218,7 +218,7 @@ get_header(); ?>
 
         </div>
 
-        <div class="box between wrap relative text-center devis-def">
+        <div class="box between wrap relative mobile text-center devis-def">
             <figure>
                 <img src="<?php echo get_template_directory_uri(); ?>/img/gratuit.png"/>
                 <figcaption>
@@ -251,7 +251,7 @@ get_header(); ?>
                 </figcaption>
             </figure>
         </div>
-
+<div id="debug"></div>
         <?php include('template/formContact.php'); ?>
     </section>
 </div>
@@ -309,9 +309,9 @@ get_header(); ?>
                     break;
                 default:
                     var $elem = $(form[name]);
-                    if($elem.prop('type') === 'email'){
+                    if ($elem.prop('type') === 'email') {
                         //mail regex
-                        if(!/^([a-z0-9]+(?:[._-][a-z0-9]+)*)@([a-z0-9]+(?:[.-][a-z0-9]+)*\.[a-z]{2,})$/.test($elem.val())){
+                        if (!/^([a-z0-9]+(?:[._-][a-z0-9]+)*)@([a-z0-9]+(?:[.-][a-z0-9]+)*\.[a-z]{2,})$/.test($elem.val())) {
                             invalid($elem);
                         }
                     }
@@ -348,7 +348,9 @@ get_header(); ?>
                 "mariage_statut": getValForm("mariage_statut", this),
                 "mariage_ex": getValForm("mariage_ex", this)
             };
+
             if (isValidForm) {
+                console.log(data);
                 $.ajax({
                     method: $(this).attr('method'),
                     url: $(this).attr('action'),
@@ -362,6 +364,9 @@ get_header(); ?>
                     },
                     complete: function (res, status) {
                         console.log(res);
+
+                        $('#debug').empty().html(res.responseText);
+
                     }
 
                 })

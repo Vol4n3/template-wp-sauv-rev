@@ -31,7 +31,7 @@ get_header(); ?>
         </div>
         <article class="page-content text-center">
             <h2 class="text-uppercase underline"><?php the_field('title'); ?></h2>
-            <div class="box between stats">
+            <div class="box between mobile stats">
                 <div>
                     <span class="number">
                         <?php the_field('nombre_dossiers_clients'); ?>
@@ -64,7 +64,7 @@ get_header(); ?>
                 </div>
             </div>
             <?php the_field('content'); ?>
-            <div class="box wrap between expertise">
+            <div class="box wrap between mobile expertise">
                 <?php
                 if (have_rows('logo_expertise')):
                     while (have_rows('logo_expertise')) : the_row();
@@ -86,7 +86,7 @@ get_header(); ?>
             <h3 class="underline">
                 <?php the_field('titre_equipe'); ?>
             </h3>
-            <div class="box between wrap team">
+            <div class="box between mobile wrap team">
                 <?php
                 if (have_rows('lequipe')):
                     while (have_rows('lequipe')) : the_row();

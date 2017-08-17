@@ -4,7 +4,7 @@
         <br>prenez rdv avec nous
     </p>
 
-    <form class="tab-content">
+    <form class="tab-content" action="<?php echo get_template_directory_uri(); ?>/controller/mailFormValidate.php" method="post">
         <div class="tab-pane active">
             <div class="relative">
                 <img src="<?php echo get_template_directory_uri(); ?>/img/profil.png" height="40"/>
@@ -67,3 +67,6 @@
         </div>
     </form>
 </section>
+<?php
+//echo get_bloginfo( 'admin_email', 'raw' );
+?>

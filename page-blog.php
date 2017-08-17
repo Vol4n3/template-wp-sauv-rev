@@ -40,7 +40,7 @@ get_header(); ?>
                 <article>
                     <figure class="box mobile">
                         <div>
-                            <img width="380" src="<?php the_field('thumbnail'); ?>">
+                            <img class="sauvant-blog-thumb" src="<?php the_field('thumbnail'); ?>">
                         </div>
                         <figcaption class="relative">
                             <?php $dateString = get_the_date('Y-m-d');

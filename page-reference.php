@@ -100,6 +100,7 @@ get_header(); ?>
                 currentPage.page.render(currentPage.renderContext);
             }
         }
+
         window.addEventListener('resize', resize);
         PDFJS.workerSrc = '<?php echo get_template_directory_uri(); ?>/js/pdf.worker.js';
         showPDF = function (url) {
@@ -184,6 +185,9 @@ get_header(); ?>
             },
             chart: {
                 map: 'custom/world-highres3'
+            },
+            legend: {
+                enabled: false
             },
 
             series: [{

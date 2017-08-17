@@ -66,9 +66,11 @@ h1 {
     margin-top: 80px;
     margin-bottom: 30px;
 }
-.logo{
+
+.logo {
     margin-bottom: 20px;
 }
+
 h1 strong {
     color: #1c9ad6;
     font-size: 1.1em;
@@ -565,6 +567,19 @@ header > .sauvant-container {
 .blue-heading .caption-text p {
     font-size: 1.7rem;
     color: #fff;
+}
+
+.faq .blue-heading .caption-text p {
+    font-size: 1.1rem;
+    color: #fff;
+    font-weight: 100;
+}
+
+.faq .blue-heading .caption-text h3 {
+    font-size: 1.3rem;
+    color: #fff;
+    text-transform: uppercase;
+    font-weight: 900;
 }
 
 .blue-heading.right .caption-text {
@@ -1384,6 +1399,11 @@ canvas {
     background-color: #1a85c1;
 }
 
+.sauvant-blog-thumb {
+    max-width: 380px;
+    width: 100%;
+}
+
 /*DEVIS*/
 
 .devis .page-content header {
@@ -1516,7 +1536,7 @@ canvas {
 }
 
 .devis-rapide select {
-background-color: #fbba06;
+    background-color: #fbba06;
     border: 1px solid #1a85c1;
     padding: 18px 40px;
     font-size: 1.2rem;
@@ -1572,11 +1592,13 @@ background-color: #fbba06;
 #accordion .tab-item:not(:first-child) {
     border-top: 1px #eeeeee solid;
 }
+
 /*Animate*/
 
-.error-animate{
-     animation: error-color 4s ease-in-out;
- }
+.error-animate {
+    animation: error-color 4s ease-in-out;
+}
+
 @keyframes error-color {
     0% {
         color: red;
@@ -1585,19 +1607,22 @@ background-color: #fbba06;
         color: #fff;
     }
 }
-.error-border-animate{
-animation: error-border-color 4s ease-in-out;
+
+.error-border-animate {
+    animation: error-border-color 4s ease-in-out;
 }
+
 @keyframes error-border-color {
     0% {
-            border: red solid 1px;
-            background-color: #f7b5b5;
+        border: red solid 1px;
+        background-color: #f7b5b5;
     }
     100% {
-            border: #eeeeee solid 1px;
-            background-color: #fbfbf9;
+        border: #eeeeee solid 1px;
+        background-color: #fbfbf9;
     }
 }
+
 /*RESPONSIVE*/
 @media screen and (max-width: 1024px) {
     .home-page .article {
@@ -1635,6 +1660,12 @@ animation: error-border-color 4s ease-in-out;
         justify-content: center;
     }
 
+    .circle,
+    .widget.widget_metaslider_widget,
+    .header-image {
+        display: none;
+    }
+
     .box.mobile-col {
         -webkit-box-orient: vertical;
         -webkit-box-direction: normal;
@@ -1665,6 +1696,17 @@ animation: error-border-color 4s ease-in-out;
         border-radius: 5px;
         font-size: 1.15rem;
         padding: 9px;
+    }
+
+    h2.underline:after, h3.underline:after {
+        content: "";
+        display: block;
+        width: 90%;
+        left: -10px;
+        height: 5px;
+        background-color: #fbba06;
+        position: relative;
+        margin-top: 10px;
     }
 
     .blue-heading .call_to_action {
@@ -1703,8 +1745,30 @@ animation: error-border-color 4s ease-in-out;
 
     .page-content {
         background-color: #fff;
-        padding: 50px 30px;
+        padding: 50px 10px;
         margin: 0 5px;
         border-bottom: 5px #fbba06 solid;
+    }
+
+    #devis-form .btn-devis, #devis-form input[type=text], #devis-form input[type=email] {
+        padding: 19px 10px;
+        background-color: #fbfbf9;
+        border: #eeeeee solid 1px;
+        color: #626160;
+        border-radius: 0;
+        font-size: 1.15rem;
+
+    }
+
+    #devis-form .btn-devis {
+        text-align: center;
+        margin: 20px auto;
+    }
+
+    .page-content h2, .page-content h3, .page-content h4, .page-content h5, .page-content p {
+        padding: 0 10px;
+    }
+    .header-widget.item-right{
+        margin-left: 0;
     }
 }

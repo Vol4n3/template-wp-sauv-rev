@@ -17,14 +17,17 @@ get_header(); ?>
                     <?php the_field('text-caption'); ?>
                     <?php
                     $qod = "";
+                    $rod = "";
                     if (have_rows('questions')):
                         while (have_rows('questions')) : the_row();
                             if (get_sub_field('question_du_jour')) {
                                 $qod = get_sub_field('question');
+                                $rod = get_sub_field('reponse');
                             }
                         endwhile;
                     endif; ?>
-                    <p><?php echo $qod; ?></p>
+                    <h3><?php echo $qod; ?></h3>
+                    <p><?php echo $rod; ?></p>
                 </div>
 
             </div>
